@@ -1,18 +1,43 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
-import { enableMocking } from '@/shared/api/mocks'
 
 import './index.css'
 
-enableMocking().then(() => {
-  createRoot(document.getElementById('root')!).render(
+const init = async () => {
+  if (import.meta.env.VITE_MSW_ENABLED === 'true') {
+    const { worker } = await import('@/shared/api/mocks/browser')
+
+    await worker.start({
+      onUnhandledRequest(req, print) {
+        const url = new URL(req.url)
+
+        if (url.protocol === 'chrome-extension:') {
+          return
+        }
+        if (url.pathname.startsWith('/assets/')) {
+          return
+        }
+
+        const isImage = /\.(png|jpg|jpeg|gif|svg|webp|ico)(\?.*)?$/i.test(url.pathname)
+        const isPlaceholder = url.hostname === 'placehold.co'
+        if (isImage || isPlaceholder) {
+          return
+        }
+
+        print.warning()
+      }
+    })
+  }
+
+  createRoot(document.getElementById("root")!).render(
     <StrictMode>
-      <RouterProvider
-        router={router}
-        fallbackElement={<div>Loading...</div>}
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </StrictMode>
   )
-})
+}
+
+init().catch(console.error)

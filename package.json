@@ -6,9 +6,10 @@
   "private": false,
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "build": "vite build",
+    "build:mock": "vite build --mode mock",
     "preview": "vite preview",
+    "lint": "eslint .",
     "api": "npx openapi-typescript ./src/shared/api/schema/main.yaml -o ./src/shared/api/schema/generated.ts"
   },
   "dependencies": {

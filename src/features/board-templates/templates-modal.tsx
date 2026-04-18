@@ -9,7 +9,7 @@ import { TemplatesGallery } from './templates-gallery'
 import { useTemplatesModal } from './use-templates-modal'
 
 export function TemplatesModal() {
-  const { isOpen, close } = useTemplatesModal();
+  const { isOpen, close } = useTemplatesModal()
 
   return (
     <Dialog open={isOpen} onOpenChange={close}>

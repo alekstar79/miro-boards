@@ -21,6 +21,8 @@ The project implements core features: authentication, board management (create, 
 The architecture is designed for scalability, strong typing, and separation of concerns.  
 **Mock Service Worker (MSW)** is heavily used during development, enabling frontend work independently of the backend.
 
+![miro](miro.png)
+
 ---
 
 <!-- TOC -->

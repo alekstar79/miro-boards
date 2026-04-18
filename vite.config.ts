@@ -4,5 +4,6 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: '.', // /miro-boards/
   plugins: [react(), tsconfigPaths(), tailwindcss()]
 })
