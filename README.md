@@ -6,11 +6,7 @@
 [![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite&logoColor=white)](https://vite.dev/)
 [![TanStack Query](https://img.shields.io/badge/TanStack_Query-5-FF4154?style=flat&logo=reactquery&logoColor=white)](https://tanstack.com/query)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?style=flat&logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
 [![MSW](https://img.shields.io/badge/MSW-2-FF6A00?style=flat&logo=mockserviceworker&logoColor=white)](https://mswjs.io/)
-[![React Router](https://img.shields.io/badge/React_Router-7-CA4245?style=flat&logo=reactrouter&logoColor=white)](https://reactrouter.com/)
-[![React Hook Form](https://img.shields.io/badge/React_Hook_Form-7-EC5990?style=flat&logo=reacthookform&logoColor=white)](https://react-hook-form.com/)
-[![Zod](https://img.shields.io/badge/Zod-3-3E67B1?style=flat&logo=zod&logoColor=white)](https://zod.dev/)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-6BA539?style=flat&logo=openapiinitiative&logoColor=white)](https://www.openapis.org/)
 
 ## 📌 Overview
