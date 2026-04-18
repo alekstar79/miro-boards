@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:mock": "vite build --mode mock",
+    "build:mock": "cross-env VITE_MSW_ENABLED=true vite build && npm run copy-routes",
+    "copy-routes": "node scripts/copy-routes.js",
     "preview": "vite preview",
     "lint": "eslint .",
     "api": "npx openapi-typescript ./src/shared/api/schema/main.yaml -o ./src/shared/api/schema/generated.ts"
@@ -45,6 +46,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "cross-env": "^10.1.0",
     "eslint": "^9.26.0",
     "eslint-import-resolver-typescript": "^4.3.4",
     "eslint-plugin-boundaries": "^5.0.1",
