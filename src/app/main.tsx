@@ -13,18 +13,14 @@ const init = async () => {
       serviceWorker: {
         url: `${import.meta.env.BASE_URL}mockServiceWorker.js`,
       },
-      onUnhandledRequest(req, print) {
+      onUnhandledRequest(req, _print) {
         const url = new URL(req.url)
-
-        if (url.protocol === "chrome-extension:") return
-        if (url.pathname.startsWith("/assets/")) return
 
         const isImage = /\.(png|jpg|jpeg|gif|svg|webp|ico)(\?.*)?$/i.test(url.pathname)
         const isPlaceholder = url.hostname === "placehold.co"
-
         if (isImage || isPlaceholder) return
 
-        print.warning()
+        // print.warning()
       }
     })
   }
